@@ -1,0 +1,6 @@
+server:
+  port: 7890
+
+acme:
+  challenge-token: 123ABC
+  challenge-response: 123-RESPONSE-789

@@ -1,0 +1,1 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=be.hubau.spring.boot.autoconfigure.acme.AcmeConfig

@@ -12,6 +12,7 @@ import org.springframework.web.client.DefaultResponseErrorHandler;
 import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
+import java.util.concurrent.Callable;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
@@ -27,7 +28,12 @@ public class IntegrationTest {
     @BeforeClass
     public static void start() throws Exception {
         Future<ConfigurableApplicationContext> future = Executors.newSingleThreadExecutor().submit(
-                () -> SpringApplication.run(TestApplication.class)
+                new Callable<ConfigurableApplicationContext>() {
+                    @Override
+                    public ConfigurableApplicationContext call() throws Exception {
+                        return SpringApplication.run(TestApplication.class);
+                    }
+                }
         );
 
         context = future.get(60, TimeUnit.SECONDS);

@@ -8,7 +8,7 @@
     <description>Spring Boot Starter ACME</description>
     <url>http://github.com/Turbots/acme-spring-boot-starter</url>
     <properties>
-        <java.version>1.6</java.version>
+        <java.version>1.7</java.version>
         <spring.boot.version>1.3.2.RELEASE</spring.boot.version>
     </properties>
     <licenses>
